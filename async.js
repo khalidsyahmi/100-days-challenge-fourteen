@@ -1,7 +1,7 @@
 // try catch
 const fs = require("fs/promises");
 
-async function readFile() {
+function readFile() {
   /*   let fileData;
    */ /* fileData = */
 
@@ -17,8 +17,8 @@ async function readFile() {
   }); */
 
   //Promises
-  fileData = await fs.readFile("data.txt");
-  /*    .then(function (fileData) {
+  fs.readFile("data.txt")
+    .then(function (fileData) {
       console.log("File parsing is done!");
       console.log(fileData.toString());
     })
@@ -29,14 +29,12 @@ async function readFile() {
     .catch(function (error) {
       console.log(error);
     }); // promises error handling
- */
-  console.log("File parsing is done!");
-  console.log(fileData.toString());
+
   console.log("Hello world");
 }
-
 readFile();
 
+// async/ await
 async function readText() {
   let fileData;
 
@@ -51,5 +49,4 @@ async function readText() {
   console.log(fileData.toString());
   console.log("Hello world");
 }
-
 readText();
